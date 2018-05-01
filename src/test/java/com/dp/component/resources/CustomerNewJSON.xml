@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Rule resonseStyle="JSON">
+    <source>
+    </source>
+    <Mapping>
+        <item stand="appKey" default="1682a582-d1fb-4cad-b0ed-d6e32df8924d" level="1"></item>
+        <item stand="serviceName" default="hengqin.applyPolicyService.applyPolicy" level="1"></item>
+        <item stand="timestamp" default="1503627975483" level="1"></item>
+        <item stand="version" default="1.0.0" level="1"></item>
+        <item stand="bizContent" level="1"></item>
+
+        <item stand="salesChannel" level="2" parentKey="bizContent" default="7003"></item>
+        <item stand="payIntv" default="0" level="2" parentKey="bizContent"></item>
+        <item stand="payPeriod" default="1000" level="2" parentKey="bizContent"></item>
+        <item stand="payPeriodFlag" default="Y" level="2" parentKey="bizContent"></item>
+        <item stand="proposeDate" default="2018-05-01" level="2" parentKey="bizContent"></item>
+        <item stand="saleItemId" mpKey="Package.Request.Order.Item.ItemId" level="2" parentKey="bizContent"></item>
+        <item stand="sumFirstPrem" mpKey="Package.Request.Order.Item.ActualPremium" level="2" parentKey="bizContent"></item>
+        <item stand="valDate" default="2018-05-01" level="2" parentKey="bizContent"></item>
+        <item stand="agentCode" default="WX00000002" level="2" parentKey="bizContent"></item>
+
+        <item stand="Appnt" level="2" parentKey="bizContent"></item>
+        <item stand="customerName" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderName" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="gender" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderSex" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="birthday" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderBirthday" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="cellphone" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderMobile" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="address" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderAddress" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="certiType" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderCardType" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="certiCode" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderCardNo" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="certInvalidDate" default="9999-12-31" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="mail" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderEmail" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="nation" default="CHN" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="province" mpKey="Package.Request.ApplyInfo.HolderInfo.ResidentProvince" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="city" mpKey="Package.Request.ApplyInfo.HolderInfo.ResidentCity" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="urbanArea" mpKey="Package.Request.ApplyInfo.HolderInfo.ServiceArea" level="3" parentKey="bizContent.Appnt"></item>
+        <item stand="zipCode" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderZip" level="3" parentKey="bizContent.Appnt"></item>
+
+        <item stand="Insureds" group="1" type="list" listSource="Package.Request.ApplyInfo.InsuredList" level="2" parentKey="bizContent">
+            <item stand="customerName" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderName" level="3" parentKey="bizContent.Insureds"></item>
+            <item stand="gender" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderSex" level="3" parentKey="Insureds"></item>
+            <item stand="birthday" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderBirthday" level="3" parentKey="Insureds"></item>
+            <item stand="certiType" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderCardType" level="3" parentKey="Insureds"></item>
+            <item stand="certiCode" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderCardNo" level="3" parentKey="Insureds"></item>
+            <item stand="certInvalidDate" default="9999-12-31" level="3" parentKey="Insureds"></item>
+            <item stand="address" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderAddress" level="3" parentKey="Insureds"></item>
+            <item stand="insuCity" mpKey="Package.Request.ApplyInfo.HolderInfo.ResidentCity" level="3" parentKey="InsuredsInsuredsInsuredsInsuredsInsuredsInsureds"></item>
+            <item stand="insuProvince" mpKey="Package.Request.ApplyInfo.HolderInfo.ResidentProvince" level="3" parentKey="InsuredsInsuredsInsuredsInsuredsInsureds"></item>
+            <item stand="insuUrbanArea" mpKey="Package.Request.ApplyInfo.HolderInfo.ServiceArea" level="3" parentKey="InsuredsInsuredsInsuredsInsureds"></item>
+            <item stand="isSatutoryBeneficiary" default="1" level="3" parentKey="InsuredsInsureds" desc="法定受益人"></item>
+            <item stand="jobCategory" mpKey="Package.Request.Order.OrderId" level="3" parentKey="InsuredsInsuredsInsureds"></item>
+            <item stand="nation" default="CHN" level="3" parentKey="Insureds"></item>
+            <item stand="relaToInsured" mpKey="Package.Request.ApplyInfo.InsuredList.InsuredInfo.InsuredRelation" level="3" parentKey="Insureds"></item>
+            <item stand="zipCode" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderZip" level="3" parentKey="Insureds"></item>
+            <item stand="mail" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderEmail" level="3" parentKey="Insureds"></item>
+            <item stand="cellphone" mpKey="Package.Request.ApplyInfo.HolderInfo.HolderMobile" level="3" parentKey="Insureds"></item>
+
+            <item stand="Risks" group="1" type="list" listSource="Package.Request.Order" level="3" parentKey="bizContent.Insureds">
+            <item stand="riskCode" mpKey="Package.Request.Order.Item.ProductCode" level="4" parentKey="Risks"></item>
+            <item stand="amnt" mpKey="Package.Request.Order.Item.Amount" level="4" parentKey="Risks"></item>
+            <item stand="prem" mpKey="Package.Request.Order.Item.Premium" level="4" parentKey="Risks"></item>
+            <item stand="insuYear" default="1000" level="4" parentKey="Risks"></item>
+            <item stand="insuYearFlag" default="Y" level="4" parentKey="Risks"></item>
+            </item>
+        </item>
+
+
+    </Mapping>
+</Rule>
